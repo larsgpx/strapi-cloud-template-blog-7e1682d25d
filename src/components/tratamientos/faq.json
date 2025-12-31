@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_tratamientos_faqs",
+  "info": {
+    "displayName": "faq",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "pregunta": {
+      "type": "string"
+    },
+    "respuesta": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

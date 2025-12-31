@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "enzimas_corporales",
+  "info": {
+    "singularName": "enzima-corporal",
+    "pluralName": "enzimas-corporales",
+    "displayName": "Enzimas Recombinantes corporales"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Interna": {
+      "type": "component",
+      "component": "tratamientos.interna-completa",
+      "repeatable": false
+    }
+  }
+}

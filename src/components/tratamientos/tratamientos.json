@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_tratamientos_tratamientos",
+  "info": {
+    "displayName": "Simple",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "boton": {
+      "type": "string"
+    },
+    "Checklist": {
+      "type": "component",
+      "component": "shared.check-list",
+      "repeatable": true
+    },
+    "duracion": {
+      "type": "string"
+    },
+    "PasosTratamiento": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_tratamientos_tabs",
+  "info": {
+    "displayName": "tabs",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "blocks"
+    },
+    "Checklist": {
+      "type": "component",
+      "component": "shared.check-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

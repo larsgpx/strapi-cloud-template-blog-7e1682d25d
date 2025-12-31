@@ -1,53 +1,79 @@
-import type { Struct, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedSlider extends Struct.ComponentSchema {
-  collectionName: 'components_shared_sliders';
+export interface SharedBannerInterno extends Struct.ComponentSchema {
+  collectionName: 'components_shared_banner_internos';
   info: {
-    displayName: 'Slider';
-    icon: 'address-book';
-    description: '';
+    displayName: 'bannerInterno';
+    icon: 'monitor';
   };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitulo: Schema.Attribute.Text;
+    titulo: Schema.Attribute.String;
   };
 }
 
-export interface SharedSeo extends Struct.ComponentSchema {
-  collectionName: 'components_shared_seos';
+export interface SharedBannerSlider extends Struct.ComponentSchema {
+  collectionName: 'components_shared_banner_sliders';
   info: {
-    name: 'Seo';
-    icon: 'allergies';
-    displayName: 'Seo';
-    description: '';
+    displayName: 'BannerSlider';
+    icon: 'picture';
   };
   attributes: {
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
+    Banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitulo: Schema.Attribute.Text;
+    Titulo: Schema.Attribute.Blocks;
   };
 }
 
-export interface SharedRichText extends Struct.ComponentSchema {
-  collectionName: 'components_shared_rich_texts';
+export interface SharedCasos extends Struct.ComponentSchema {
+  collectionName: 'components_shared_casos';
   info: {
-    displayName: 'Rich text';
-    icon: 'align-justify';
-    description: '';
+    displayName: 'casos';
+    icon: 'check';
   };
   attributes: {
-    body: Schema.Attribute.RichText;
+    antes: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    despues: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titulo: Schema.Attribute.String;
   };
 }
 
-export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: 'components_shared_quotes';
+export interface SharedCheckList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_check_lists';
   info: {
-    displayName: 'Quote';
-    icon: 'indent';
+    displayName: 'CheckList';
+    icon: 'bulletList';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    body: Schema.Attribute.Text;
+    Texto: Schema.Attribute.String;
+  };
+}
+
+export interface SharedDoctores extends Struct.ComponentSchema {
+  collectionName: 'components_shared_doctores';
+  info: {
+    displayName: 'Doctores';
+    icon: 'doctor';
+  };
+  attributes: {
+    especialidad: Schema.Attribute.Text;
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    nombre: Schema.Attribute.String;
+    puesto: Schema.Attribute.String;
+  };
+}
+
+export interface SharedHighlight extends Struct.ComponentSchema {
+  collectionName: 'components_shared_highlights';
+  info: {
+    displayName: 'highlight';
+    icon: 'lightbulb';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titulo: Schema.Attribute.String;
   };
 }
 
@@ -62,14 +88,190 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedQuote extends Struct.ComponentSchema {
+  collectionName: 'components_shared_quotes';
+  info: {
+    displayName: 'Quote';
+    icon: 'indent';
+  };
+  attributes: {
+    body: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedRichText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_rich_texts';
+  info: {
+    description: '';
+    displayName: 'Rich text';
+    icon: 'align-justify';
+  };
+  attributes: {
+    body: Schema.Attribute.RichText;
+  };
+}
+
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    description: '';
+    displayName: 'Seo';
+    icon: 'allergies';
+    name: 'Seo';
+  };
+  attributes: {
+    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    shareImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SharedServicios extends Struct.ComponentSchema {
+  collectionName: 'components_shared_servicios';
+  info: {
+    displayName: 'servicios';
+    icon: 'doctor';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titulo: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedServiciosEsteticos extends Struct.ComponentSchema {
+  collectionName: 'components_shared_servicios_esteticos';
+  info: {
+    displayName: 'Servicios Esteticos';
+    icon: 'apps';
+  };
+  attributes: {
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Titulo: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSlider extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sliders';
+  info: {
+    description: '';
+    displayName: 'Slider';
+    icon: 'address-book';
+  };
+  attributes: {
+    files: Schema.Attribute.Media<'images', true>;
+  };
+}
+
+export interface TratamientosFaq extends Struct.ComponentSchema {
+  collectionName: 'components_tratamientos_faqs';
+  info: {
+    displayName: 'faq';
+    icon: 'bulletList';
+  };
+  attributes: {
+    pregunta: Schema.Attribute.String;
+    respuesta: Schema.Attribute.Text;
+  };
+}
+
+export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
+  collectionName: 'components_tratamientos_interna_completas';
+  info: {
+    displayName: 'InternaCompleta';
+    icon: 'bulletList';
+  };
+  attributes: {
+    casosDeExito: Schema.Attribute.Component<'shared.casos', true>;
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ImagenBanner: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    preguntas: Schema.Attribute.Component<'tratamientos.faq', true>;
+    Seo: Schema.Attribute.Component<'shared.seo', false>;
+    Subtitulo: Schema.Attribute.Text;
+    Tabs: Schema.Attribute.Component<'tratamientos.tabs', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    Titulo: Schema.Attribute.String;
+    tituloOtrosServicios: Schema.Attribute.String;
+    UrlBoton: Schema.Attribute.String;
+  };
+}
+
+export interface TratamientosTabs extends Struct.ComponentSchema {
+  collectionName: 'components_tratamientos_tabs';
+  info: {
+    displayName: 'tabs';
+    icon: 'folder';
+  };
+  attributes: {
+    Checklist: Schema.Attribute.Component<'shared.check-list', true>;
+    descripcion: Schema.Attribute.Blocks;
+    Titulo: Schema.Attribute.String;
+  };
+}
+
+export interface TratamientosTratamientoEspecial
+  extends Struct.ComponentSchema {
+  collectionName: 'components_tratamientos_tratamiento_especials';
+  info: {
+    displayName: 'tratamientoEspecial';
+    icon: 'command';
+  };
+  attributes: {
+    Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Tabs: Schema.Attribute.Component<'tratamientos.tabs', true>;
+    Titulo: Schema.Attribute.String;
+    UrlBoton: Schema.Attribute.String;
+  };
+}
+
+export interface TratamientosTratamientos extends Struct.ComponentSchema {
+  collectionName: 'components_tratamientos_tratamientos';
+  info: {
+    displayName: 'Simple';
+    icon: 'user';
+  };
+  attributes: {
+    boton: Schema.Attribute.String;
+    Checklist: Schema.Attribute.Component<'shared.check-list', true>;
+    description: Schema.Attribute.Blocks;
+    duracion: Schema.Attribute.String;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    PasosTratamiento: Schema.Attribute.String;
+    titulo: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.slider': SharedSlider;
-      'shared.seo': SharedSeo;
-      'shared.rich-text': SharedRichText;
-      'shared.quote': SharedQuote;
+      'shared.banner-interno': SharedBannerInterno;
+      'shared.banner-slider': SharedBannerSlider;
+      'shared.casos': SharedCasos;
+      'shared.check-list': SharedCheckList;
+      'shared.doctores': SharedDoctores;
+      'shared.highlight': SharedHighlight;
       'shared.media': SharedMedia;
+      'shared.quote': SharedQuote;
+      'shared.rich-text': SharedRichText;
+      'shared.seo': SharedSeo;
+      'shared.servicios': SharedServicios;
+      'shared.servicios-esteticos': SharedServiciosEsteticos;
+      'shared.slider': SharedSlider;
+      'tratamientos.faq': TratamientosFaq;
+      'tratamientos.interna-completa': TratamientosInternaCompleta;
+      'tratamientos.tabs': TratamientosTabs;
+      'tratamientos.tratamiento-especial': TratamientosTratamientoEspecial;
+      'tratamientos.tratamientos': TratamientosTratamientos;
     }
   }
 }

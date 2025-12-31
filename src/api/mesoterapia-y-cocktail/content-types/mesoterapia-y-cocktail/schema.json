@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "mesoterapia_y_cocktails",
+  "info": {
+    "singularName": "mesoterapia-y-cocktail",
+    "pluralName": "mesoterapia-y-cocktails",
+    "displayName": "Tratamientos Regenerativos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "text"
+    },
+    "Banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Tratamientos": {
+      "type": "component",
+      "component": "tratamientos.tratamientos",
+      "repeatable": true
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "tituloOtrosServicios": {
+      "type": "string"
+    }
+  }
+}

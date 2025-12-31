@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_tratamientos_interna_completas",
+  "info": {
+    "displayName": "InternaCompleta",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "ImagenBanner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Titulo": {
+      "type": "string"
+    },
+    "Subtitulo": {
+      "type": "text"
+    },
+    "Imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Tabs": {
+      "type": "component",
+      "component": "tratamientos.tabs",
+      "repeatable": true,
+      "max": 2
+    },
+    "UrlBoton": {
+      "type": "string"
+    },
+    "preguntas": {
+      "type": "component",
+      "component": "tratamientos.faq",
+      "repeatable": true
+    },
+    "casosDeExito": {
+      "type": "component",
+      "component": "shared.casos",
+      "repeatable": true
+    },
+    "Seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "tituloOtrosServicios": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
