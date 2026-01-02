@@ -31,10 +31,10 @@
       "type": "string"
     },
     "longitud": {
-      "type": "decimal"
+      "type": "string"
     },
     "latitud": {
-      "type": "decimal"
+      "type": "string"
     }
   }
 }
