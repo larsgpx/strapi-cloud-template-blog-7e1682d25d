@@ -30,11 +30,11 @@
       "component": "shared.check-list",
       "repeatable": true
     },
-    "duracion": {
-      "type": "string"
-    },
-    "PasosTratamiento": {
-      "type": "string"
+    "Servicios": {
+      "type": "component",
+      "component": "tratamientos.servicios-resultado",
+      "repeatable": true,
+      "max": 3
     }
   },
   "config": {}

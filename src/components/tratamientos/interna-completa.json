@@ -38,6 +38,12 @@
       "repeatable": true,
       "max": 2
     },
+    "Servicios": {
+      "type": "component",
+      "component": "tratamientos.servicios-resultado",
+      "repeatable": true,
+      "max": 3
+    },
     "UrlBoton": {
       "type": "string"
     },

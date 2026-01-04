@@ -121,9 +121,12 @@ export interface SharedSeo extends Struct.ComponentSchema {
     name: 'Seo';
   };
   attributes: {
+    keywords: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 130;
+      }>;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
   };
 }
 
@@ -192,6 +195,16 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
     >;
     preguntas: Schema.Attribute.Component<'tratamientos.faq', true>;
     Seo: Schema.Attribute.Component<'shared.seo', false>;
+    Servicios: Schema.Attribute.Component<
+      'tratamientos.servicios-resultado',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
     Subtitulo: Schema.Attribute.Text;
     Tabs: Schema.Attribute.Component<'tratamientos.tabs', true> &
       Schema.Attribute.SetMinMax<
@@ -203,6 +216,19 @@ export interface TratamientosInternaCompleta extends Struct.ComponentSchema {
     Titulo: Schema.Attribute.String;
     tituloOtrosServicios: Schema.Attribute.String;
     UrlBoton: Schema.Attribute.String;
+  };
+}
+
+export interface TratamientosServiciosResultado extends Struct.ComponentSchema {
+  collectionName: 'components_tratamientos_servicios_resultados';
+  info: {
+    displayName: 'Servicios resultado';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Contenido: Schema.Attribute.String;
+    Iconos: Schema.Attribute.Enumeration<['Resultado', 'Tiempo', 'Duracion']>;
+    Titulo: Schema.Attribute.String;
   };
 }
 
@@ -228,6 +254,16 @@ export interface TratamientosTratamientoEspecial
   };
   attributes: {
     Imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Servicios: Schema.Attribute.Component<
+      'tratamientos.servicios-resultado',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
     Tabs: Schema.Attribute.Component<'tratamientos.tabs', true>;
     Titulo: Schema.Attribute.String;
     UrlBoton: Schema.Attribute.String;
@@ -244,9 +280,17 @@ export interface TratamientosTratamientos extends Struct.ComponentSchema {
     boton: Schema.Attribute.String;
     Checklist: Schema.Attribute.Component<'shared.check-list', true>;
     description: Schema.Attribute.Blocks;
-    duracion: Schema.Attribute.String;
     imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    PasosTratamiento: Schema.Attribute.String;
+    Servicios: Schema.Attribute.Component<
+      'tratamientos.servicios-resultado',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
     titulo: Schema.Attribute.String;
   };
 }
@@ -269,6 +313,7 @@ declare module '@strapi/strapi' {
       'shared.slider': SharedSlider;
       'tratamientos.faq': TratamientosFaq;
       'tratamientos.interna-completa': TratamientosInternaCompleta;
+      'tratamientos.servicios-resultado': TratamientosServiciosResultado;
       'tratamientos.tabs': TratamientosTabs;
       'tratamientos.tratamiento-especial': TratamientosTratamientoEspecial;
       'tratamientos.tratamientos': TratamientosTratamientos;

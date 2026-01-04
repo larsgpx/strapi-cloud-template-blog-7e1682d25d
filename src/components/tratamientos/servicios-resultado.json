@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_tratamientos_servicios_resultados",
+  "info": {
+    "displayName": "Servicios resultado",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Contenido": {
+      "type": "string"
+    },
+    "Iconos": {
+      "type": "enumeration",
+      "enum": [
+        "Resultado",
+        "Tiempo",
+        "Duracion"
+      ]
+    }
+  },
+  "config": {}
+}
