@@ -19,7 +19,7 @@
     "porqueElegirnosDescription": {
       "type": "blocks"
     },
-    "porqueElegirnosImage": {
+    "porqueElegirnosImg": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [

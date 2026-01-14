@@ -1011,7 +1011,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;
     porqueElegirnosDescription: Schema.Attribute.Blocks;
-    porqueElegirnosImage: Schema.Attribute.Media<
+    porqueElegirnosImg: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     publishedAt: Schema.Attribute.DateTime;
