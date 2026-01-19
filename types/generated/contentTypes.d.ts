@@ -706,6 +706,8 @@ export interface ApiContactoContacto extends Struct.SingleTypeSchema {
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     Telefono: Schema.Attribute.String;
     Telefono2: Schema.Attribute.String;
+    tituloDondeNosUbicamos: Schema.Attribute.String;
+    tituloSucursales: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -936,6 +938,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    DerechosReservados: Schema.Attribute.String;
     FacebookUrl: Schema.Attribute.String;
     InstagramUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1018,6 +1021,8 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     Seo: Schema.Attribute.Component<'shared.seo', false>;
     Servicios: Schema.Attribute.Component<'shared.servicios', true>;
     testimonios: Schema.Attribute.Component<'shared.quote', true>;
+    tituloSucursales: Schema.Attribute.String;
+    tituloTestimonios: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

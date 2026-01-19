@@ -37,6 +37,9 @@
     },
     "Blog": {
       "type": "boolean"
+    },
+    "DerechosReservados": {
+      "type": "string"
     }
   }
 }
