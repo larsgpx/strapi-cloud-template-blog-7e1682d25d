@@ -921,6 +921,42 @@ export interface ApiExosomasCorporalExosomasCorporal
   };
 }
 
+export interface ApiGlobalDataGlobalData extends Struct.SingleTypeSchema {
+  collectionName: 'globals_data';
+  info: {
+    displayName: 'GlobalData';
+    pluralName: 'globals-data';
+    singularName: 'global-data';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Blog: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
+    DerechosReservados: Schema.Attribute.String;
+    FacebookUrl: Schema.Attribute.String;
+    InstagramUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::global-data.global-data'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    TextoEvaluacionGratuita: Schema.Attribute.String;
+    TiktokUrl: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    UrlEvaluacionGratuita: Schema.Attribute.String;
+    whatsappPopUp: Schema.Attribute.String;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1887,6 +1923,7 @@ declare module '@strapi/strapi' {
       'api::esteticas-facial.esteticas-facial': ApiEsteticasFacialEsteticasFacial;
       'api::exosoma.exosoma': ApiExosomaExosoma;
       'api::exosomas-corporal.exosomas-corporal': ApiExosomasCorporalExosomasCorporal;
+      'api::global-data.global-data': ApiGlobalDataGlobalData;
       'api::global.global': ApiGlobalGlobal;
       'api::hidratacion-profunda.hidratacion-profunda': ApiHidratacionProfundaHidratacionProfunda;
       'api::home.home': ApiHomeHome;

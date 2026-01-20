@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals_data",
+  "info": {
+    "singularName": "global-data",
+    "pluralName": "globals-data",
+    "displayName": "GlobalData"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "defaultSeo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "FacebookUrl": {
+      "type": "string"
+    },
+    "TiktokUrl": {
+      "type": "string"
+    },
+    "InstagramUrl": {
+      "type": "string"
+    },
+    "UrlEvaluacionGratuita": {
+      "type": "string"
+    },
+    "TextoEvaluacionGratuita": {
+      "type": "string"
+    },
+    "whatsappPopUp": {
+      "type": "string"
+    },
+    "DerechosReservados": {
+      "type": "string"
+    },
+    "Blog": {
+      "type": "boolean"
+    }
+  }
+}
